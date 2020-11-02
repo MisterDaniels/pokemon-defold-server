@@ -1,0 +1,37 @@
+I201030 02:33:19.507991 1 util/log/sync_buffer.go:70  [config] file created at: 2020/10/30 02:33:19
+I201030 02:33:19.507991 1 util/log/sync_buffer.go:70  [config] running on machine: e8ab4be630d2
+I201030 02:33:19.507991 1 util/log/sync_buffer.go:70  [config] binary: CockroachDB CCL v20.1.8 (x86_64-unknown-linux-gnu, built 2020/10/21 15:46:38, go1.13.9)
+I201030 02:33:19.507991 1 util/log/sync_buffer.go:70  [config] arguments: [/cockroach/cockroach start --insecure --store=attrs=ssd,path=/var/lib/cockroach]
+I201030 02:33:19.507991 1 util/log/sync_buffer.go:70  line format: [IWEF]yymmdd hh:mm:ss.uuuuuu goid file:line msg utf8=✓
+I201030 02:33:19.507989 1 cli/start.go:1223  logging to directory /var/lib/cockroach/logs
+W201030 02:33:19.528423 1 cli/start.go:1272  RUNNING IN INSECURE MODE!
+
+- Your cluster is open for any client that can access <all your IP addresses>.
+- Any user, even root, can log in without providing a password.
+- Any user, connecting as root, can read or write any data in your cluster.
+- There is no network encryption nor authentication, and thus no confidentiality.
+
+Check out how to secure your cluster: https://www.cockroachlabs.com/docs/v20.1/secure-a-cluster.html
+I201030 02:33:19.529133 1 server/status/recorder.go:597  available memory from cgroups (8.0 EiB) is unsupported, using system memory 2.0 GiB instead: 
+W201030 02:33:19.529164 1 cli/start.go:1144  Using the default setting for --cache (128 MiB).
+  A significantly larger value is usually needed for good performance.
+  If you have a dedicated server a reasonable setting is --cache=.25 (500 MiB).
+I201030 02:33:19.529641 1 server/status/recorder.go:597  available memory from cgroups (8.0 EiB) is unsupported, using system memory 2.0 GiB instead: 
+I201030 02:33:19.529669 1 cli/start.go:1286  CockroachDB CCL v20.1.8 (x86_64-unknown-linux-gnu, built 2020/10/21 15:46:38, go1.13.9)
+W201030 02:33:19.570951 1 cli/start.go:548  running 'cockroach start' without --join is deprecated.
+Consider using 'cockroach start-single-node' or 'cockroach init' instead.
+I201030 02:33:19.691709 1 server/status/recorder.go:597  available memory from cgroups (8.0 EiB) is unsupported, using system memory 2.0 GiB instead: 
+I201030 02:33:19.691740 1 server/config.go:404  system total memory: 2.0 GiB
+I201030 02:33:19.691778 1 server/config.go:406  server configuration:
+max offset             500000000
+cache size             128 MiB
+SQL memory pool size   500 MiB
+scan interval          10m0s
+scan min idle time     10ms
+scan max idle time     1s
+event log enabled      true
+I201030 02:33:19.691792 1 cli/start.go:1122  using local environment variables: COCKROACH_CHANNEL=official-docker
+I201030 02:33:19.691802 1 cli/start.go:1129  process identity: uid 0 euid 0 gid 0 egid 0
+I201030 02:33:19.691869 1 cli/start.go:697  starting cockroach node
+I201030 02:33:19.698846 30 storage/rocksdb.go:606  opening rocksdb instance at "/var/lib/cockroach/cockroach-temp955690084"
+E201030 02:33:20.234078 1 cli/error.go:373  ERROR: failed to start server: creating temp storage: could not open rocksdb instance: IO error: While fsync: a directory: Invalid argument

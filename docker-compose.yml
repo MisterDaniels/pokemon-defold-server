@@ -1,0 +1,46 @@
+version: '3'
+services:
+    cockroachdb:
+        container_name: pokemon_project_server_db
+        image: cockroachdb/cockroach:v20.1.8
+        command: start --insecure --join --store=attrs=ssd,path=/var/lib/cockroach
+        restart: always
+        volumes:
+            - ./database/data:/var/lib/cockroach
+        expose:
+            - "8080"
+            - "26257"
+        ports:
+            - "8080:8080"
+            - "26257:26257"
+    nakama:
+        container_name: pokemon_project_server
+        image: heroiclabs/nakama:2.14.0
+        entrypoint: 
+            - "/bin/sh"
+            - "-ecx"
+            - >
+                /nakama/nakama migrate up --database.address root@cockroachdb:26257 &&
+                exec /nakama/nakama --name nakama1 --database.address root@cockroachdb:26257
+        restart: always
+        links: 
+            - "cockroachdb:db"
+        depends_on: 
+            - "cockroachdb"
+        volumes: 
+            - ./server/data:/nakama/data
+        expose: 
+            - "7349"
+            - "7350"
+            - "7351"
+        ports:
+            - "7349:7349"
+            - "7350:7350"
+            - "7351:7351"
+        healthcheck:
+            test: ["CMD", "curl", "-f", "http://localhost:7350/"]
+            interval: 10s
+            timeout: 5s
+            retries: 5
+volumes: 
+    data:

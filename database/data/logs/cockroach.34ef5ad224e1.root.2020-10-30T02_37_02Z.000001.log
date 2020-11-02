@@ -1,0 +1,29 @@
+I201030 02:37:02.277537 1 util/log/sync_buffer.go:70  [config] file created at: 2020/10/30 02:37:02
+I201030 02:37:02.277537 1 util/log/sync_buffer.go:70  [config] running on machine: 34ef5ad224e1
+I201030 02:37:02.277537 1 util/log/sync_buffer.go:70  [config] binary: CockroachDB CCL v20.1.8 (x86_64-unknown-linux-gnu, built 2020/10/21 15:46:38, go1.13.9)
+I201030 02:37:02.277537 1 util/log/sync_buffer.go:70  [config] arguments: [/cockroach/cockroach start --join --insecure --store=attrs=ssd,path=/var/lib/cockroach]
+I201030 02:37:02.277537 1 util/log/sync_buffer.go:70  line format: [IWEF]yymmdd hh:mm:ss.uuuuuu goid file:line msg utf8=✓
+I201030 02:37:02.277535 1 cli/start.go:1223  logging to directory /var/lib/cockroach/logs
+I201030 02:37:02.380009 1 server/status/recorder.go:597  available memory from cgroups (8.0 EiB) is unsupported, using system memory 2.0 GiB instead: 
+W201030 02:37:02.380026 1 cli/start.go:1144  Using the default setting for --cache (128 MiB).
+  A significantly larger value is usually needed for good performance.
+  If you have a dedicated server a reasonable setting is --cache=.25 (500 MiB).
+I201030 02:37:02.380287 1 server/status/recorder.go:597  available memory from cgroups (8.0 EiB) is unsupported, using system memory 2.0 GiB instead: 
+I201030 02:37:02.380301 1 cli/start.go:1286  CockroachDB CCL v20.1.8 (x86_64-unknown-linux-gnu, built 2020/10/21 15:46:38, go1.13.9)
+I201030 02:37:02.692333 1 server/status/recorder.go:597  available memory from cgroups (8.0 EiB) is unsupported, using system memory 2.0 GiB instead: 
+I201030 02:37:02.692355 1 server/config.go:404  system total memory: 2.0 GiB
+I201030 02:37:02.692384 1 server/config.go:406  server configuration:
+max offset             500000000
+cache size             128 MiB
+SQL memory pool size   500 MiB
+scan interval          10m0s
+scan min idle time     10ms
+scan max idle time     1s
+event log enabled      true
+I201030 02:37:02.692396 1 cli/start.go:1122  using local environment variables: COCKROACH_CHANNEL=official-docker
+I201030 02:37:02.692406 1 cli/start.go:1129  process identity: uid 0 euid 0 gid 0 egid 0
+I201030 02:37:02.692441 1 cli/start.go:697  starting cockroach node
+E201030 02:37:02.732907 1 cli/error.go:373  ERROR: cannot load certificates.
+Check your certificate settings, set --certs-dir, or use --insecure for insecure clusters.
+
+failed to start server: problem with CA certificate: not found
